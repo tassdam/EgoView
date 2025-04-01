@@ -1,0 +1,12 @@
+Title,Publication Date,Task ,Methodology,Results,Personal Judgement,Link 
+EgoLM: Multi-Modal Language Model of Ego-Centric Motions,26.09.2024,Recover full-body motions / Recognize or describe human motions ,"EgoLM is a multimodal language model that combines motion data, egocentric video, and text. The authors represent motions as sequences of discrete tokens using VQ-VAE, and then train a language model to predict these tokens. Then, multimodal instruction tuning is performed, where the model associates video embeddings obtained using CLIP and wearable sensor data with text descriptions of motions. The resulting model is capable of both accurately reconstructing motions (motion tracking) and generating descriptions of actions (motion understanding).","The quantitative results for the task of ""Motion Tracking"" (Recover full-body motions): 
+       1. Joint position errors (for full, upper and lower body) with 3 and 1 points of 6-DoF (all in mm): 3FJP - 73.38, 3UJP - 49.67, 3LJP - 124.58, 1FJP - 106.95, 1UJP - 83.73, 1LJP - 141.26,  
+       2. Joint angle errors (for full body and root joint) with 3 and 1 points of 6-DoF (all in mm): 3FJA - 12.48, 3RJA - 13.23.
+
+The quantitative results for the task of ""Motion Understanding"" (Recognize or describe human motions) : 
+       1. M2T&T2M (Motion-to-Text and then Text-to-Motion [not evaluated, since there are only NLP metrics]) with Motion (full body mocap data) (all in similarity score): BERT - 15.90, Bleu@1 - 42.68, Bleu@4 - 11.06, RougeL - 33.71,
+       2. TP2T (Three points to Text) with 3 ponts of 6-DoF (all in similarity score): BERT - 11.94, Bleu@1 - 41.70, Bleu@4 - 9.85, RougeL - 31.47, 
+       3. V2T (Video-to-Text) with Video (all in similarity score): BERT - 16.62, Bleu@1 - 43.04, Bleu@4 - 11.34, RougeL - 33.13, 
+       4. TPV2M + MV2T (Three Points and Video to Motion + Motion (and Video) to Text) with 3 ponts of 6-DoF and Video (all in similarity score): BERT - 19.97, Bleu@1 - 45.41, Bleu@4 - 12.81, RougeL - 35.04, 
+       5. TPV2T (Three Points and Video to Text) with 3 ponts of 6-DoF and Video (all in similarity score): BERT - 18.38, Bleu@1 - 44.55, Bleu@4 - 12.12, RougeL - 33.80, 
+       6. Joint Training (?) with 3 ponts of 6-DoF and Video (all in similarity score): BERT - 19.40, Bleu@1 - 45.45, Bleu@4 - 12.72, RougeL - 34.82. ",⭐️⭐️⭐️⭐️⭐️,https://arxiv.org/pdf/2409.18127?
